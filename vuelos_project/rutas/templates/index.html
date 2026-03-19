@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rutas</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h1>Buscador de rutas ✈️</h1>
+<form method="POST">
+{% csrf_token %}
+<input name="inicio" placeholder="Origen">
+<input name="destino" placeholder="Destino">
+<button type="submit">Buscar</button>
+</form>
+
+{% if resultado %}
+<p>Ruta: {{ resultado }}</p>
+{% endif %}
+</body>
+</html>
